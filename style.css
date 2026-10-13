@@ -34,14 +34,15 @@ header {
 }
 
 #hero h1 {
-    font-size: 4em;
+    font-size: 3em;
     text-align: center;
     line-height: 1.1;
     letter-spacing: -2px;
 }
 
 main {
-    margin: 0 var(--page-margin);
+    margin: 0 auto;
+    width: 800px;
 }
 
 #logo img {
@@ -73,10 +74,8 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li a {
