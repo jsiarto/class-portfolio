@@ -5,6 +5,7 @@
     --primary-text: #223843;
     --secondary: #d77a61;
     --highlight: #d8b4a0;
+    --mobile-margin: 3rem;
     --page-margin: 6rem;
 }
 
@@ -30,18 +31,18 @@ p {
 header {
     text-align: center;
     padding: 1rem 0;
-    margin: 0 var(--page-margin);
-}
-
-#hero h1 {
-    font-size: 4em;
-    text-align: center;
-    line-height: 1.1;
-    letter-spacing: -2px;
+    margin: 0 var(--mobile-margin);
 }
 
 main {
-    margin: 0 var(--page-margin);
+    margin: 0 var(--mobile-margin);
+}
+
+#hero h1 {
+    font-size: 2.5em;
+    text-align: center;
+    line-height: 1.1;
+    letter-spacing: -2px;
 }
 
 #logo img {
@@ -61,11 +62,12 @@ main {
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
+    grid-column: span 2 / span 2;
+    align-self: stretch;
 }
 
 nav {
     background: var(--secondary);
-    border-radius: 30px;
     margin-top: 1rem;
 }
 
@@ -75,16 +77,12 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
-    display: inline-block;
-}
-
 nav ul li a {
     color: var(--primary-bg);
     text-decoration: none;
     font-size: 1.8em;
     padding: 1rem 2rem;
-    display: inline-block;
+    display: block;
 }
 
 nav ul li a:hover {
@@ -95,4 +93,44 @@ footer {
     padding: 1rem 0;
     text-align: center;
     font-size: 0.8em;
+}
+
+@media (min-width: 600px) {
+    header {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 10px;
+        margin: 0 var(--page-margin);
+    }
+
+    main {
+        margin: 0 var(--page-margin);
+    }
+
+    #hero h1 {
+        font-size: 4em;
+    }
+
+    nav {
+        grid-column: span 5 / span 5;
+        align-self: center;
+        border-radius: 30px;
+    }
+
+    nav ul li {
+        display: inline-block;
+    }
+
+    #projects {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto auto;
+        gap: 10px;
+        align-items: start;
+    }
+
+    #projects h2 {
+        grid-column: span 6 / span 6;
+    }
 }
